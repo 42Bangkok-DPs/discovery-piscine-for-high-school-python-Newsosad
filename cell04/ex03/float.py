@@ -1,13 +1,9 @@
 #!/usr/bin/env python3
-def isdecimal(numstr):
-    try:
-        float(numstr)
-        return True
-    except ValueError:
-        return False
-if __name__ == "__main__":
-    numstr = input("Give me a number: ")
-if isdecimal(numstr):
-    print("This number is an decimal")
-else:
-    print("This number is a decimal")
+user_input = input("Give me a number: ")
+
+try:
+    number = float(user_input)
+    message = f"this is an {'integer' if number.is_integer() else 'decimal'}."
+    print(message)
+except ValueError:
+    print("That's not a valid number.")
